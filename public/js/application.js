@@ -20,7 +20,10 @@ $(document).ready(function() {
     .done(function(response){
       console.log(response);
       // Now, I'm getting the desired JSON dataset. Time to parse.
-
+      console.log(response[0]);
+      console.log(response[0].word);
+      $(".poem-container").prepend(response[0].word);
+      // The application gives me back the first rhyming word and prepends it to the top of the container. Now, I have to add the result to the database. That addition logic should probably happen in the controller. I can come back later to build my poem.
     })
   })
 });
