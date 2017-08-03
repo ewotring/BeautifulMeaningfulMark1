@@ -5,3 +5,11 @@
 </form>
 
 <!-- put an iterator here to show all of the poems -->
+<div class='poem-container'>
+  <% @poems.each do |poem| %>
+    <article id="<%= poem.id %>">
+        <span class='poem'><%= poem.body %></span>
+        <span class='timestamp'><%= poem.created_at %></span>
+    </article>
+  <% end %>
+</div>

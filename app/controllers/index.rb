@@ -3,7 +3,7 @@ get '/' do
 end
 
 get '/poems' do
-  @poems = Poem.all?
+  @poems = Poem.all
   erb :'index'
 end
 
