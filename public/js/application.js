@@ -4,7 +4,25 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $("#poems").on("submit", function(){
+    event.preventDefault();
+    // console.log("bound");
+    $form = $(this);
+    // console.log($form);
+    var seedWord = $form.serialize();
+    // console.log(seedWord);
+    $.ajax({
+      url: $form.attr("action"),
+      method: $form.attr("method"),
+      data: seedWord,
+      dataType: "json"
+    })
+    .done(function(response){
+      console.log(response);
+      // Now, I'm getting the desired JSON dataset. Time to parse.
 
+    })
+  })
 });
 
 // collect user input of a word to seed the poem
