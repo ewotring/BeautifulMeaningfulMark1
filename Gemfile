@@ -14,7 +14,7 @@ gem 'rake'
 
 gem 'shotgun', '~>0.9.1'
 
-ruby '2.3.4'
+# ruby '2.3.4'
 
 group :test do
   gem 'shoulda-matchers'
